@@ -8,5 +8,9 @@ dotfiles=(.vimrc .zshrc)
 
 # シンボリックリンクをホームディレクトリ直下に作成
 for file in "${dotfiles[@]}"; do
+    # create backup file
+    if [ -e $HOME/$file ]; then
+        mv $HOME/$file $HOME/$file.bk
+    fi
     ln -svf $SCRIPT_DIR/$file ~/
 done
