@@ -1,0 +1,11 @@
+zsh
+yarn
+nvm
+gcloud
+starship
+pyenv
+git
+php
+composer
+aws
+

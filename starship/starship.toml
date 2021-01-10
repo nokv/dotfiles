@@ -1,0 +1,7 @@
+[aws]
+format = "on [$symbol$profile]($style) "
+symbol = "🅰 "
+
+[gcloud]
+format = 'on [$symbol$active(\($region\))]($style) '
+symbol = "🅶 "

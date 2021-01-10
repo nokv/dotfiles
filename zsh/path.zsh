@@ -52,4 +52,4 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 # Starship
-export STARSHIP_CONFIG=$SCRIPT_DIR/.starship
+export STARSHIP_CONFIG=$SCRIPT_DIR/starship/starship.toml
