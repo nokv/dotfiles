@@ -7,6 +7,12 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# browserslist
+alias browserslist='npx browserslist'
+
+# git
+alias g='git'
+
 # cd -> auto ls
 cd() {
     builtin cd "$@" && ls
