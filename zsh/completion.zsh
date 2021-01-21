@@ -21,3 +21,5 @@ zstyle ':completion:*:default' menu select=2
 
 # cd -<tab>で以前移動したディレクトリを表示
 setopt auto_pushd
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
