@@ -1,4 +1,5 @@
 alias cd:dev="cd ~/Desktop/develop"
+alias cd:code="cd ~/Documents/vscode"
 alias l="ls -lah"
 
 # Reload the shell (i.e. invoke as a login shell)
