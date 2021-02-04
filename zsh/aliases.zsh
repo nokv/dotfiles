@@ -12,7 +12,10 @@ alias path='echo -e ${PATH//:/\\n}'
 alias browserslist='npx browserslist'
 
 # git
-alias g='git'
+alias gitSHA="sh ~/dotfiles/git/utils/getSHA.sh $@"
+alias gitArchiveDiffHead="sh ~/dotfiles/git/utils/gitArchiveDiffHead.sh $@"
+alias gitArchiveDiffBetween="sh ~/dotfiles/git/utils/gitArchiveDiffBetween.sh $@"
+alias gitLogFromSHA="git log -n 1 $@" # git log from sha
 
 # cd -> auto ls
 cd() {
