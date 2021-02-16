@@ -1,9 +1,9 @@
 # GCP
 export CLOUDSDK_PYTHON=python3
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/na-takahashi/google-cloud-sdk/path.zsh.inc'
+if [ -f  $HOME/google-cloud-sdk/path.zsh.inc ]; then .  $HOME/google-cloud-sdk/path.zsh.inc; fi
 # The next line enables shell command completion for gcloud.
-source '/Users/na-takahashi/google-cloud-sdk/completion.zsh.inc'
+if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/google-cloud-sdk/completion.zsh.inc; fi
 
 # PHP
 export PATH="/usr/local/opt/php@7.3/bin:$PATH"
@@ -12,17 +12,16 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
 
 # Python
-# pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
-# 参考: https://qiita.com/crankcube/items/15f06b32ec56736fc43a
+# export PATH="/usr/local/var/pyenv/bin:$PATH"
 export PYENV_ROOT=/usr/local/var/pyenv
 # pyenv の自動補完機能を有効化
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # AWS
-export PATH="/Users/na-takahashi/.ebcli-virtual-env/executables:$PATH"
-#export PATH=/Users/na-takahashi/.pyenv/versions/3.7.2/bin:$PATH
+export PATH=$HOME/.ebcli-virtual-env/executables:$PATH
 
 # NODE
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
