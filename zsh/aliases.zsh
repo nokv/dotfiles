@@ -11,6 +11,9 @@ alias path='echo -e ${PATH//:/\\n}'
 # browserslist
 alias browserslist='npx browserslist'
 
+# npm
+alias npm-global-list='npm ls -g --depth=0'
+
 # git
 alias gitSHA="sh ~/dotfiles/git/utils/getSHA.sh $@"
 alias gitArchiveDiffHead="sh ~/dotfiles/git/utils/gitArchiveDiffHead.sh $@"
