@@ -17,7 +17,10 @@ export PYENV_ROOT=/usr/local/var/pyenv
 # pyenv の自動補完機能を有効化
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+
+  if which pyenv-virtualenv-init > /dev/null; then
+    eval "$(pyenv virtualenv-init -)";
+  fi
 fi
 
 # AWS
