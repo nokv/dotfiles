@@ -14,6 +14,11 @@ alias browserslist='npx browserslist'
 # npm
 alias npm-global-list='npm ls -g --depth=0'
 
+# search files and zip them
+searchAndZip() {
+    find . -path '*/node_modules' -prune -false -o -name "$1" -print | zip -r $1.`date "+%Y%m%d"`.zip -@
+}
+
 # git
 alias gitSHA="sh ~/dotfiles/git/utils/getSHA.sh $@"
 alias gitArchiveDiffHead="sh ~/dotfiles/git/utils/gitArchiveDiffHead.sh $@"
