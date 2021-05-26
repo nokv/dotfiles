@@ -12,10 +12,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
 
 # Python
-# export PATH="/usr/local/var/pyenv/bin:$PATH"
-export PYENV_ROOT=/usr/local/var/pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 # pyenv の自動補完機能を有効化
 if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 
   if which pyenv-virtualenv-init > /dev/null; then
