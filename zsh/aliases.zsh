@@ -1,6 +1,7 @@
 alias cd:dev="cd ~/Desktop/develop"
 alias cd:code="cd ~/Documents/vscode"
 alias l="ls -lah"
+alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g'"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
