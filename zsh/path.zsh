@@ -5,6 +5,9 @@ if [ -f  $HOME/google-cloud-sdk/path.zsh.inc ]; then .  $HOME/google-cloud-sdk/p
 # The next line enables shell command completion for gcloud.
 if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/google-cloud-sdk/completion.zsh.inc; fi
 
+# Java
+export JAVA_HOME=`/usr/libexec/java_home`
+
 # PHP
 export PATH="/usr/local/opt/php@7.3/bin:$PATH"
 export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
