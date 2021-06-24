@@ -1,5 +1,7 @@
 # enable completion
-autoload -Uz compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+compinit
 
 if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
   compinit -d $HOME/.zcompdump;

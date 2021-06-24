@@ -28,7 +28,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # AWS
-export PATH=$HOME/.ebcli-virtual-env/executables:$PATH
+export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
+export PATH="/usr/local/bin/aws_completer:$PATH"
+complete -C '/usr/local/bin/aws_completer' aws
 
 # NODE
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
