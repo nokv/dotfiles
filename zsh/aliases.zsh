@@ -20,6 +20,9 @@ searchAndZip() {
     find . -path '*/node_modules' -prune -false -o -name "$1" -print | zip -r $1.`date "+%Y%m%d"`.zip -@
 }
 
+# History
+alias history='history -i'
+
 # https://firebase.google.com/docs/cli#update-cli
 alias firebase-upgrade='curl -sL firebase.tools | upgrade=true bash'
 

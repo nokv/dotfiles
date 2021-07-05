@@ -12,3 +12,5 @@ setopt inc_append_history
 setopt share_history
 # 補完時にヒストリを自動的に展開
 setopt hist_expand
+
+setopt extended_history
