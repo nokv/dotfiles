@@ -92,7 +92,7 @@ set completeopt=menu,menuone,noinsert,noselect
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 set display=lastline
 set grepprg=grep\ -nH
-set mouse=a
+set mouse-=a
 set nrformats-=octal
 set shortmess-=S
 set splitright
