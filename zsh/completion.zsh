@@ -3,6 +3,13 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 compinit
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
   compinit -d $HOME/.zcompdump;
 else
