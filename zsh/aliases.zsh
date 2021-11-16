@@ -24,7 +24,7 @@ searchAndZip() {
 }
 
 # History
-alias history='history -i'
+alias history='history -i -t "%F %T"'
 
 # https://firebase.google.com/docs/cli#update-cli
 alias firebase-upgrade='curl -sL firebase.tools | upgrade=true bash'
