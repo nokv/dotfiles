@@ -9,8 +9,8 @@ if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/google-cloud-s
 export JAVA_HOME=`/usr/libexec/java_home`
 
 # PHP
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+export PATH="/usr/local/opt/php@8.0/bin:$PATH"
+export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="~/.composer/vendor/bin:$PATH"
 
