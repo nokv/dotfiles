@@ -6,6 +6,7 @@ source $SCRIPT_DIR/zsh/prompt.zsh
 source $SCRIPT_DIR/zsh/options.zsh
 source $SCRIPT_DIR/zsh/aliases.zsh
 source $SCRIPT_DIR/zsh/completion.zsh
+source $SCRIPT_DIR/zsh/completion/npm.zsh
 source $SCRIPT_DIR/zsh/editor.zsh
 source $SCRIPT_DIR/zsh/history.zsh
 source $SCRIPT_DIR/zsh/path.zsh
