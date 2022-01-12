@@ -41,8 +41,22 @@ set showmatch
 "文字を折り返さないようにする
 set nowrap
 syntax on
-
 set t_Co=256
+
+"全角スペースをハイライト
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=reverse ctermfg=darkblue
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme       * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    augroup END
+    call ZenkakuSpace()
+endif
+
 " タブの代わりに空白を使う
 set expandtab
 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
