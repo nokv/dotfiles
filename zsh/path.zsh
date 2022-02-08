@@ -8,6 +8,9 @@ if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/google-cloud-s
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
 
+# Ruby
+eval "$(rbenv init - zsh)"
+
 # PHP
 export PATH="/usr/local/opt/php@8.0/bin:$PATH"
 export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
