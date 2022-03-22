@@ -1,0 +1,9 @@
+# os
+.DS_Store
+.localize
+
+# Dependency directories
+node_modules/
+
+# Editor swap file
+*.swp

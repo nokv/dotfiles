@@ -1,6 +1,7 @@
 alias cd:dev="cd ~/Desktop/develop"
 alias cd:code="cd ~/Documents/vscode"
-alias l="ls -lah"
+alias ls='exa --classify --icons -h'
+alias cat='bat'
 alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g'"
 
 # Reload the shell (i.e. invoke as a login shell)
@@ -20,7 +21,7 @@ alias nvm:node-update='(){nvm install v$1 --reinstall-packages-from=v$1}'
 
 # search files and zip them
 searchAndZip() {
-    find . -path '*/node_modules' -prune -false -o -name "$1" -print | zip -r $1.`date "+%Y%m%d"`.zip -@
+  find . -path '*/node_modules' -prune -false -o -name "$1" -print | zip -r $1.$(date "+%Y%m%d").zip -@
 }
 
 # History
@@ -37,5 +38,16 @@ alias gitLogFromSHA="git log -n 1 $@" # git log from sha
 
 # cd -> auto ls
 cd() {
-    builtin cd "$@" && ls
+  builtin cd "$@" && ls
 }
+
+function u() {
+  cd ./"$(git rev-parse --show-cdup)"
+  if [ $# = 1 ]; then
+    cd "$1"
+  fi
+}
+_u() {
+  _values $(fd --type d --base-directory $(git rev-parse --show-cdup))
+}
+compdef _u u

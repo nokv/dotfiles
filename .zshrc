@@ -2,6 +2,7 @@ export LANG=ja_JP.UTF-8
 
 SCRIPT_DIR=$HOME/dotfiles
 
+source $SCRIPT_DIR/zsh/zim.zsh
 source $SCRIPT_DIR/zsh/prompt.zsh
 source $SCRIPT_DIR/zsh/options.zsh
 source $SCRIPT_DIR/zsh/aliases.zsh

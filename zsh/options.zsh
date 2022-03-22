@@ -1,5 +1,5 @@
 # automatically change directory when dir name is typed
-setopt auto_cd
+setopt AUTO_CD
 
 # disable ctrl+s, ctrl+q
 setopt no_flow_control

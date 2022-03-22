@@ -8,5 +8,10 @@ git
 php
 composer
 aws
-ios-webkit-debug-proxy
 zsh-autosuggestions
+webp
+rbenv
+zim
+fzf
+bat
+find

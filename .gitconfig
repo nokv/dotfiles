@@ -1,0 +1,25 @@
+[core]
+editor = vim
+excludesfile = ~/.gitignore_global
+[user]
+name = Naoki Takahashi
+email = na-takahashi@vectorinc.co.jp
+signingkey = B3E7285D69EB8FF4
+[commit]
+template = ~/.gitmessage
+gpgsign = true
+[gpg]
+program = gpg
+[credential]
+helper = osxkeychain
+[init]
+defaultBranch = main
+[merge]
+ff = false
+[pull]
+rebase = false
+ff = only
+[web]
+browser = google-chrome
+[alias]
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
