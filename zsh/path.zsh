@@ -35,9 +35,10 @@ export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 export PATH="/usr/local/bin/aws_completer:$PATH"
 complete -C '/usr/local/bin/aws_completer' aws
 
-# NODE
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # .nvmrc が存在している場合自動でバージョンを切り替える。
 # place this after nvm initialization!
