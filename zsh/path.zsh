@@ -1,12 +1,12 @@
 # GCP
 export CLOUDSDK_PYTHON=python3
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f  $HOME/google-cloud-sdk/path.zsh.inc ]; then .  $HOME/google-cloud-sdk/path.zsh.inc; fi
+if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then . $HOME/google-cloud-sdk/path.zsh.inc; fi
 # The next line enables shell command completion for gcloud.
 if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/google-cloud-sdk/completion.zsh.inc; fi
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Ruby
 eval "$(rbenv init - zsh)"
@@ -25,8 +25,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 
-  if which pyenv-virtualenv-init > /dev/null; then
-    eval "$(pyenv virtualenv-init -)";
+  if which pyenv-virtualenv-init >/dev/null; then
+    eval "$(pyenv virtualenv-init -)"
   fi
 fi
 
@@ -37,8 +37,8 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"                                       # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # .nvmrc が存在している場合自動でバージョンを切り替える。
 # place this after nvm initialization!
