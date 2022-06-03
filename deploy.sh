@@ -7,7 +7,7 @@ SCRIPT_DIR=$(
 )
 
 # 配置したい設定ファイル
-dotfiles=(.vimrc .zshrc .gitconfig .gitignore_global .zimrc)
+dotfiles=(.vimrc .zshrc .gitconfig .gitignore_global .zimrc .gitmessage)
 
 # シンボリックリンクをホームディレクトリ直下に作成
 for file in "${dotfiles[@]}"; do
