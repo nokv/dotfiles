@@ -51,3 +51,6 @@ _u() {
   _values $(fd --type d --base-directory $(git rev-parse --show-cdup))
 }
 compdef _u u
+
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
