@@ -14,7 +14,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias browserslist='npx browserslist'
 
 # npm
-alias npm-global-list='npm ls -g --depth=0'
+alias npm-global-list='npm ls --location=global --depth=0'
 
 # nvm
 alias nvm:node-update='(){nvm install v$1 --reinstall-packages-from=v$1}'
