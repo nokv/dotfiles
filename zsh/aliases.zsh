@@ -13,6 +13,9 @@ alias path='echo -e ${PATH//:/\\n}'
 # browserslist
 alias browserslist='npx browserslist'
 
+# google cloud platform
+alias gcd='gcloud'
+
 # npm
 alias npm-global-list='npm ls --location=global --depth=0'
 
