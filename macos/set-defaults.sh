@@ -12,3 +12,6 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop/screens
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture name "ScreenShot"
 
+# Finder
+defaults write com.apple.finder AppleShowAllFiles -bool YES
+defaults write -g AppleShowAllExtensions -bool true
