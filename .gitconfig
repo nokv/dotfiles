@@ -3,8 +3,8 @@ editor = vim
 excludesfile = ~/.gitignore_global
 [user]
 name = Naoki Takahashi
-email = na-takahashi@signalinc.co.jp
-signingkey = 0CC994B0A6C99E64
+email = naoki.tkb@gmail.com
+signingkey = 3E5830623A28162F
 [commit]
 template = ~/.gitmessage
 gpgsign = true
