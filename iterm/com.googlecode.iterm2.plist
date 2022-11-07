@@ -660,14 +660,16 @@
 				<key>Red Component</key>
 				<real>0.20252507925033569</real>
 			</dict>
+			<key>Blend</key>
+			<real>0.49977638134057967</real>
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>3.0286425285532999</real>
+			<real>15.457773180149044</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1129,7 +1131,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Show Timestamps</key>
 			<integer>2</integer>
 			<key>Silence Bell</key>
@@ -1233,7 +1235,9 @@
 								<key>algorithm</key>
 								<integer>0</integer>
 								<key>auto-rainbow style</key>
-								<integer>0</integer>
+								<integer>1</integer>
+								<key>font</key>
+								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
 								<false/>
 							</dict>
@@ -1351,7 +1355,7 @@
 			<key>Title Components</key>
 			<integer>512</integer>
 			<key>Transparency</key>
-			<real>0.38190038071065985</real>
+			<real>0.29700177698725555</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
@@ -1381,7 +1385,7 @@
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenFileInNewWindows</key>
-	<false/>
+	<true/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>PointerActions</key>
