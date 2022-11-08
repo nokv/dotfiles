@@ -15,7 +15,7 @@ else
   compinit -C;
 fi;
 
-# cdrを有効化
+# cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':completion:*' recent-dirs-insert both
@@ -38,3 +38,4 @@ zstyle ':completion:*:default' menu select=2
 
 # cd -<tab>で以前移動したディレクトリを表示
 setopt auto_pushd
+setopt auto_param_keys

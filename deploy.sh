@@ -7,7 +7,7 @@ DOTFILES=$(
 )
 
 # SymLink
-files=(.vimrc .zshrc .gitconfig .gitignore_global .zimrc .gitmessage .npmrc .yarnrc)
+files=(.vimrc .zprofile .zshrc .gitconfig .gitignore_global .zimrc .gitmessage .npmrc .yarnrc)
 for file in "${files[@]}"; do
   # create backup file
   if [ -e $HOME/$file ]; then

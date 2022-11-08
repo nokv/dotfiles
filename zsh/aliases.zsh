@@ -2,6 +2,8 @@ alias cd:dev="cd ~/Desktop/develop"
 alias cd:code="cd ~/Documents/vscode"
 alias ls='exa --classify --icons -h'
 alias cat='bat'
+alias v='vim'
+alias vi='vim'
 alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g'"
 
 # Reload the shell (i.e. invoke as a login shell)
@@ -14,13 +16,10 @@ alias path='echo -e ${PATH//:/\\n}'
 alias browserslist='npx browserslist'
 
 # google cloud platform
-alias gcd='gcloud'
+alias gc='gcloud'
 
 # npm
 alias npm-global-list='npm ls --location=global --depth=0'
-
-# nvm
-alias nvm:node-update='(){nvm install v$1 --reinstall-packages-from=v$1}'
 
 # search files and zip them
 searchAndZip() {
@@ -34,6 +33,7 @@ alias history='history -i -t "%F %T"'
 alias firebase-upgrade='curl -sL firebase.tools | upgrade=true bash'
 
 # git
+alias g='git'
 alias gitSHA="sh ~/dotfiles/git/utils/getSHA.sh $@"
 alias gitArchiveDiffHead="sh ~/dotfiles/git/utils/gitArchiveDiffHead.sh $@"
 alias gitArchiveDiffBetween="sh ~/dotfiles/git/utils/gitArchiveDiffBetween.sh $@"
