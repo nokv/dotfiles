@@ -1,9 +1,8 @@
 # enable completion
 autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-compinit
 
 if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
@@ -39,7 +38,3 @@ zstyle ':completion:*:default' menu select=2
 
 # cd -<tab>で以前移動したディレクトリを表示
 setopt auto_pushd
-
-if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
