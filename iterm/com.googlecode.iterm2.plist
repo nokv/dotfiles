@@ -754,6 +754,8 @@
 			<string>No</string>
 			<key>Description</key>
 			<string>Default</string>
+			<key>Disable Smcup Rmcup</key>
+			<false/>
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Draw Powerline Glyphs</key>
@@ -1365,7 +1367,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>linux</string>
+			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>3</integer>
 			<key>Title Components</key>
