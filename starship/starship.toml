@@ -13,5 +13,5 @@ format = "on [$symbol$profile]($style) "
 symbol = "🅰 "
 
 [gcloud]
-format = 'on [$symbol$active(\($region\))]($style) '
+format = 'on [$symbol$active(\($account\))]($style) '
 symbol = "🅶 "
