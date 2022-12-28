@@ -40,4 +40,8 @@ export PATH="/usr/local/bin/aws_completer:$PATH"
 complete -C '/usr/local/bin/aws_completer' aws
 
 # Node.js version manager
-eval "$(fnm env --use-on-cd)"
+. $HOME/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH compinit
+autoload -Uz compinit && compinit
