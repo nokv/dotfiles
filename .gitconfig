@@ -1,17 +1,15 @@
 [core]
 editor = vim
+ignorecase = false
 excludesfile = ~/.gitignore_global
 [user]
 name = Naoki Takahashi
 email = naoki.tkb@gmail.com
-signingkey = 3E5830623A28162F
 [commit]
 template = ~/.gitmessage
-gpgsign = true
-[gpg]
-program = gpg
 [credential]
 helper = osxkeychain
+helper = /usr/local/share/gcm-core/git-credential-manager
 [init]
 defaultBranch = main
 [merge]
@@ -32,3 +30,10 @@ lg = !"git lg1"
 diff = auto
 status = auto
 branch = auto
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+[credential "https://dev.azure.com"]
+useHttpPath = true
