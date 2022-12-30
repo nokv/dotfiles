@@ -13,6 +13,9 @@ if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - zsh)"
 fi
 
+# gpg
+export GPG_TTY=$(tty)
+
 # 1password Agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
