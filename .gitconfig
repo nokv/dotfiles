@@ -6,6 +6,8 @@ excludesfile = ~/.gitignore_global
 name = Naoki Takahashi
 email = naoki.tkb@gmail.com
 signingkey = 1B1844646ACAEB63
+[push]
+autoSetupRemote = true
 [commit]
 template = ~/.gitmessage
 gpgsign = true
