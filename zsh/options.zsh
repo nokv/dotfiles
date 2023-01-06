@@ -13,5 +13,3 @@ setopt print_eight_bit
 
 # ^Dでログアウトしない
 setopt ignore_eof
-
-setopt correct
