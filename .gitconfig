@@ -2,10 +2,6 @@
 editor = vim
 ignorecase = false
 excludesfile = ~/.gitignore_global
-[user]
-name = Naoki Takahashi
-email = naoki.tkb@gmail.com
-signingkey = 1B1844646ACAEB63
 [push]
 autoSetupRemote = true
 [commit]
@@ -43,3 +39,5 @@ process = git-lfs filter-process
 required = true
 [credential "https://dev.azure.com"]
 useHttpPath = true
+[include]
+path = ~/.gitconfig.local
