@@ -1,3 +1,4 @@
+alias mac_version="sw_vers && uname -r && uname -m && sysctl -a machdep.cpu"
 alias cd:dev="cd ~/Desktop/develop"
 alias cd:code="cd ~/Documents/vscode"
 alias ls='exa --classify --icons -h'

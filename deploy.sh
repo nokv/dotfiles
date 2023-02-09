@@ -15,3 +15,7 @@ for file in "${files[@]}"; do
   fi
   ln -svf $DOTFILES/$file ~/
 done
+
+if [[ ! -f "$HOME/.gitconfig.local" ]]; then
+  cp "$DOTFILES/gitconfig.local.sample" "$HOME/.gitconfig.local"
+fi
