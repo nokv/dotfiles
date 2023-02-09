@@ -3,10 +3,11 @@
 
 # Inserts a blank line between shell prompts
 add_newline = true
-
 scan_timeout = 10
-
 command_timeout = 300
+
+[git_branch]
+symbol = " "
 
 [aws]
 format = "on [$symbol$profile]($style) "
