@@ -1,2 +1,7 @@
 .DS_Store
 .gitconfig.local
+Brewfile.lock.json
+node_modules
+package-lock.json
+yarn.lock
+*.swp
