@@ -17,5 +17,5 @@ for file in "${files[@]}"; do
 done
 
 if [[ ! -f "$HOME/.gitconfig.local" ]]; then
-  cp "$DOTFILES/gitconfig.local.sample" "$HOME/.gitconfig.local"
+  cp "$DOTFILES/.gitconfig.local.sample" "$HOME/.gitconfig.local"
 fi
