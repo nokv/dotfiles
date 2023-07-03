@@ -16,9 +16,9 @@ helper = /usr/local/share/gcm-core/git-credential-manager
 defaultBranch = main
 [merge]
 ff = false
-tool = code-insiders
-[mergetool "code-insiders"]
-cmd = code-insiders --wait --merge $REMOTE $LOCAL $BASE $MERGED
+tool = code
+[mergetool "code"]
+cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [pull]
 rebase = false
 ff = only
@@ -33,16 +33,20 @@ r = rebase
 f = fetch
 p = pull
 c = commit
+ca = commit --amend
+s = switch
+dev = switch develop
 [color]
 diff = auto
 status = auto
 branch = auto
+ui = true
 [filter "lfs"]
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 required = true
-[credential "https://dev.azure.com"]
-useHttpPath = true
 [include]
 path = ~/.gitconfig.local
+[credential "https://dev.azure.com"]
+useHttpPath = true
