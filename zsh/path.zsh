@@ -45,7 +45,6 @@ export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 export PATH="/usr/local/bin/aws_completer:$PATH"
 complete -C '/usr/local/bin/aws_completer' aws
 
-export NODE_OPTIONS="--max-old-space-size=2048"
 # Node.js version manager
 . $HOME/.asdf/asdf.sh
 # append completions to fpath

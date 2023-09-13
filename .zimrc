@@ -3,7 +3,6 @@ zmodule git
 zmodule input
 zmodule utility
 zmodule fzf
-zmodule exa
 zmodule completion
 zmodule zsh-users/zsh-completions --fpath src
 zmodule zsh-users/zsh-syntax-highlighting
