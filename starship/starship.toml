@@ -7,7 +7,20 @@ scan_timeout = 10
 command_timeout = 300
 
 [git_branch]
-symbol = " "
+# symbol = " "
+symbol = ""
+format = '\([$symbol$branch(:$remote_branch)]($style)\)'
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) ) '
+up_to_date = '✓'
+stashed = ''
+
+[nodejs]
+disabled = true
+
+[ruby]
+disabled = true
 
 [aws]
 format = "on [$symbol$profile]($style) "
@@ -16,3 +29,9 @@ symbol = "🅰 "
 [gcloud]
 format = 'on [$symbol$active(\($account\))]($style) '
 symbol = "🅶 "
+
+[docker_context]
+symbol = ""
+
+[directory]
+truncation_length = 3
