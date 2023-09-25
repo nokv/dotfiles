@@ -2,8 +2,13 @@
 editor = vim
 ignorecase = false
 excludesfile = ~/.gitignore_global
+pager = delta
 [push]
 autoSetupRemote = true
+[interactive]
+diffFilter = delta --color-only
+[delta]
+navigate = true
 [commit]
 template = ~/.gitmessage
 gpgsign = true
@@ -11,13 +16,16 @@ gpgsign = true
 program = gpg
 [credential]
 helper = osxkeychain
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
+helper =
+helper = /usr/local/share/gcm-core/git-credential-manager
 [init]
 defaultBranch = main
 [merge]
 ff = false
 tool = code
+conflictstyle = diff3
+[diff]
+colorMoved = default
 [mergetool "code"]
 cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [pull]
@@ -50,4 +58,4 @@ required = true
 [include]
 path = ~/.gitconfig.local
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+useHttpPath = true
