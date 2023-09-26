@@ -9,6 +9,10 @@ autoSetupRemote = true
 diffFilter = delta --color-only
 [delta]
 navigate = true
+line-numbers = true
+side-by-side = true
+syntax-theme = Nord
+keep-plus-minus-markers = true
 [commit]
 template = ~/.gitmessage
 gpgsign = true
