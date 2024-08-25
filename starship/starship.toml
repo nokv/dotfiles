@@ -4,7 +4,10 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 scan_timeout = 10
-command_timeout = 300
+command_timeout = 500
+
+[package]
+disabled = true
 
 [git_branch]
 # symbol = " "
@@ -15,23 +18,30 @@ format = '\([$symbol$branch(:$remote_branch)]($style)\)'
 format = '([$all_status$ahead_behind]($style) ) '
 up_to_date = '✓'
 stashed = ''
+ignore_submodules = true
+untracked = ""
 
 [nodejs]
+disabled = true
+
+[python]
 disabled = true
 
 [ruby]
 disabled = true
 
 [aws]
+disabled = true
 format = "on [$symbol$profile]($style) "
 symbol = "🅰 "
 
 [gcloud]
+disabled = true
 format = 'on [$symbol$active(\($account\))]($style) '
 symbol = "🅶 "
 
 [docker_context]
-symbol = ""
+disabled = true
 
 [directory]
 truncation_length = 3

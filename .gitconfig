@@ -3,6 +3,8 @@ editor = vim
 ignorecase = false
 excludesfile = ~/.gitignore_global
 pager = delta
+fsmonitor=true
+untrackedCache=true
 [push]
 autoSetupRemote = true
 [interactive]
@@ -49,6 +51,7 @@ c = commit
 ca = commit --amend
 s = switch
 dev = switch develop
+b = checkout -b
 [color]
 diff = auto
 status = auto
