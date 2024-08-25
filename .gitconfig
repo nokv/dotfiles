@@ -1,5 +1,4 @@
 [core]
-editor = vim
 ignorecase = false
 excludesfile = ~/.gitignore_global
 pager = delta
