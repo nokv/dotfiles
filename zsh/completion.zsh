@@ -1,22 +1,13 @@
-# enable completion
-autoload bashcompinit && bashcompinit
-
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
 fi
-
-if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
-  compinit -d $HOME/.zcompdump;
-else
-  compinit -C;
-fi;
 
 # npm
 eval "$(npm completion)"
+
+# asdf
+fpath=(${ASDF_DIR}/completions $fpath)
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
