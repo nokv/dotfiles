@@ -20,5 +20,8 @@ eval "$(op completion zsh)"; compdef _op op
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 export PATH="/usr/local/bin/aws_completer:$PATH"
 
+# MySQL
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
 # Node.js version manager
 . $HOME/.asdf/asdf.sh
