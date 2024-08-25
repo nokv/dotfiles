@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# bashにしたら動くかも？
-
-# PWD=$(
-#   cd $(dirname $0)
-#   pwd
-# )
-
 echo $PWD
 
 sudo -v
