@@ -13,7 +13,8 @@ export GPG_TTY=$(tty)
 
 # 1password
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-eval "$(op completion zsh)"; compdef _op op
+eval "$(op completion zsh)"
+compdef _op op
 [ -f $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
 
 # AWS
@@ -23,5 +24,5 @@ export PATH="/usr/local/bin/aws_completer:$PATH"
 # MySQL
 export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
-# Node.js version manager
-. $HOME/.asdf/asdf.sh
+eval "$(mise activate zsh)"
+export PATH="$HOME/.local/share/mise/shims:$PATH"

@@ -6,9 +6,6 @@ fi
 # npm
 eval "$(npm completion)"
 
-# asdf
-fpath=(${ASDF_DIR}/completions $fpath)
-
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
