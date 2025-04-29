@@ -8,21 +8,9 @@ alias v='vim'
 alias vi='vim'
 alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g'"
 alias updateBrewfile='brew bundle dump --force --no-vscode'
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec ${SHELL} -l"
-
-# Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
-
-# browserslist
-alias browserslist='npx browserslist'
-
-# google cloud platform
 alias gc='gcloud'
-
-# npm
-alias npm-global-list='npm ls --location=global --depth=0'
+alias reload="exec ${SHELL} -l"
+alias path='echo -e ${PATH//:/\\n}'
 
 # search files and zip them
 searchAndZip() {
@@ -31,9 +19,6 @@ searchAndZip() {
 
 # History
 alias history='history -i -t "%F %T"'
-
-# https://firebase.google.com/docs/cli#update-cli
-alias firebase-upgrade='curl -sL firebase.tools | upgrade=true bash'
 
 # git
 alias g='git'
