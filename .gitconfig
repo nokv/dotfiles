@@ -20,9 +20,7 @@ gpgsign = true
 [gpg]
 program = gpg
 [credential]
-helper = osxkeychain
-helper =
-helper = /usr/local/share/gcm-core/git-credential-manager
+credentialStore = gpg
 [init]
 defaultBranch = main
 [merge]
@@ -39,8 +37,8 @@ ff = only
 [web]
 browser = google-chrome
 [alias]
-lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
 lg = !"git lg1"
 d = diff
 r = rebase
@@ -50,7 +48,6 @@ c = commit
 ca = commit --amend
 s = switch
 dev = switch develop
-b = checkout -b
 [color]
 diff = auto
 status = auto
