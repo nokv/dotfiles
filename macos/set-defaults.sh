@@ -27,6 +27,7 @@ defaults write com.apple.finder ShowPathbar -bool "true"
 # Keyboard
 defaults write com.apple.inputmethod.Kotoeri JIMPrefLiveConversionKey -bool "false"
 defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # .DS_Store
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool "true"
