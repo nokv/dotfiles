@@ -19,6 +19,11 @@ brew upgrade
 
 brew bundle --file ./Brewfile
 
+# create directories
+mkdir ~/Desktop/screenshot
+mkdir ~/Desktop/develop
+
 sh $PWD/macos/set-defaults.sh
+sh $PWD/macos/setup-gpg.sh
 
 echo Done!
