@@ -1,5 +1,5 @@
 # GCP
-export CLOUDSDK_PYTHON=python
+export CLOUDSDK_PYTHON=python3
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
