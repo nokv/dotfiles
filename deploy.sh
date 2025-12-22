@@ -7,7 +7,7 @@ DOTFILES=$(
 )
 
 # SymLink
-files=(.vimrc .zprofile .zshrc .gitconfig .gitignore_global .zimrc .gitmessage .npmrc)
+files=(.vimrc .zprofile .zshrc .gitconfig .gitignore_global .gitmessage .npmrc)
 for file in "${files[@]}"; do
   # create backup file
   if [ -e $HOME/$file ]; then
@@ -19,3 +19,7 @@ done
 if [[ ! -f "$HOME/.gitconfig.local" ]]; then
   cp "$DOTFILES/.gitconfig.local.sample" "$HOME/.gitconfig.local"
 fi
+
+# Sheldon
+mkdir -p "$HOME/.config/sheldon"
+ln -svf "$DOTFILES/sheldon/plugins.toml" "$HOME/.config/sheldon/plugins.toml"

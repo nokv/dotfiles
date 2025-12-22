@@ -28,7 +28,7 @@ brew "pinentry-mac"
 brew "redis", restart_service: :changed
 brew "starship"
 brew "uv"
-brew "zim"
+brew "sheldon"
 cask "1password"
 cask "1password-cli"
 cask "antigravity"
