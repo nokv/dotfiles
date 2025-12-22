@@ -48,6 +48,7 @@ c = commit
 ca = commit --amend
 s = switch
 dev = switch develop
+pdev = pull origin develop:develop
 [color]
 diff = auto
 status = auto
