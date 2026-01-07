@@ -1,65 +1,81 @@
 [core]
-ignorecase = false
-excludesfile = ~/.gitignore_global
-pager = delta
-fsmonitor=true
-untrackedCache=true
-[push]
-autoSetupRemote = true
-[interactive]
-diffFilter = delta --color-only
-[delta]
-navigate = true
-line-numbers = true
-side-by-side = true
-syntax-theme = Nord
-keep-plus-minus-markers = true
+  ignorecase = false
+  excludesfile = ~/.gitignore_global
+  pager = delta
+  fsmonitor=true
+  untrackedCache=true
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
 [commit]
-template = ~/.gitmessage
-gpgsign = true
-[gpg]
-program = gpg
-[credential]
-credentialStore = gpg
-[init]
-defaultBranch = main
-[merge]
-ff = false
-tool = code
-conflictstyle = diff3
-[diff]
-colorMoved = default
-[mergetool "code"]
-cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
-[pull]
-rebase = false
-ff = only
-[web]
-browser = google-chrome
-[alias]
-lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-lg = !"git lg1"
-d = diff
-r = rebase
-f = fetch
-p = pull
-c = commit
-ca = commit --amend
-s = switch
-dev = switch develop
-pdev = pull origin develop:develop
+  template = ~/.gitmessage
+  gpgsign = true
+  verbose = true
+[push]
+  autoSetupRemote = true
+  followTags = true
 [color]
-diff = auto
-status = auto
-branch = auto
-ui = true
-[filter "lfs"]
-clean = git-lfs clean -- %f
-smudge = git-lfs smudge -- %f
-process = git-lfs filter-process
-required = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[interactive]
+  diffFilter = delta --color-only
+[diff]
+  colorMoved = default
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[delta]
+  navigate = true
+  line-numbers = true
+  side-by-side = true
+  syntax-theme = Nord
+  keep-plus-minus-markers = true
+[gpg]
+  program = gpg
+[credential]
+  credentialStore = gpg
+[init]
+  defaultBranch = main
+[merge]
+  ff = false
+  tool = code
+  conflictstyle = diff3
+[mergetool "code"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[rerere]
+  enabled = true
+  autoupdate = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[pull]
+  rebase = false
+  ff = only
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[web]
+  browser = google-chrome
+[help]
+  autocorrect = prompt
+[alias]
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  lg = !"git lg1"
+  d = diff
+  r = rebase
+  f = fetch
+  p = pull
+  c = commit
+  ca = commit --amend
+  s = switch
+  dev = switch develop
+  pdev = pull origin develop:develop
 [include]
-path = ~/.gitconfig.local
-[credential "https://dev.azure.com"]
-useHttpPath = true
+  path = ~/.gitconfig.local

@@ -8,3 +8,5 @@ node_modules/
 # Editor swap file
 *.swp
 .vscode/*
+
+.claude/settings.local.json
