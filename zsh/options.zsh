@@ -11,6 +11,10 @@ export GIT_EDITOR="${EDITOR}"
 # automatically change directory when dir name is typed
 setopt auto_cd
 
+# cd -<tab>で以前移動したディレクトリを表示
+setopt auto_pushd
+setopt auto_param_keys
+
 # disable ctrl+s, ctrl+q
 setopt no_flow_control
 
@@ -23,3 +27,10 @@ setopt print_eight_bit
 
 # ^Dでログアウトしない
 setopt ignore_eof
+
+# pushd時の重複を無視
+setopt PUSHD_IGNORE_DUPS
+# pushd/popdの出力を抑制
+setopt PUSHD_SILENT
+# dotfileも候補に含める
+setopt globdots

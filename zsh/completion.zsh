@@ -78,10 +78,3 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 
 zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 zstyle ':completion:*' squeeze-slashes true
-
-# Don't beep on ambiguous completions.
-setopt NO_LIST_BEEP
-
-# cd -<tab>で以前移動したディレクトリを表示
-setopt auto_pushd
-setopt auto_param_keys

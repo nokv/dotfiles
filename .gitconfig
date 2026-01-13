@@ -23,7 +23,6 @@
 [interactive]
   diffFilter = delta --color-only
 [diff]
-  colorMoved = default
   algorithm = histogram
   colorMoved = plain
   mnemonicPrefix = true
