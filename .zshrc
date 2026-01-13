@@ -1,5 +1,6 @@
 DOTFILES=$HOME/dotfiles
 
+source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/options.zsh
 source $DOTFILES/zsh/path.zsh
 source $DOTFILES/zsh/plugins.zsh

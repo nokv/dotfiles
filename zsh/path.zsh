@@ -13,7 +13,7 @@ export GPG_TTY=$(tty)
 
 # 1password
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-eval "$(op completion zsh)"
+cache_eval "op_completion" "op completion zsh"
 compdef _op op
 [ -f $HOME/.config/op/plugins.sh ] && source $HOME/.config/op/plugins.sh
 

@@ -3,8 +3,8 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 fi
 
-# npm
-eval "$(npm completion)"
+# npm completion
+cache_eval "npm_completion" "npm completion"
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
