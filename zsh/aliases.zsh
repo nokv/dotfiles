@@ -25,11 +25,16 @@ alias g='git'
 alias gitSHA="sh ~/dotfiles/git/utils/getSHA.sh $@"
 alias gitArchiveDiffHead="sh ~/dotfiles/git/utils/gitArchiveDiffHead.sh $@"
 alias gitArchiveDiffBetween="sh ~/dotfiles/git/utils/gitArchiveDiffBetween.sh $@"
-alias gitLogFromSHA="git log -n 1 $@" # git log from sha
 
-# cd -> auto ls
-cd() {
-  builtin cd "$@" && ls
+function cd() {
+  if [[ $# -eq 0 ]]; then
+    local dir=$(cdr -l | sed 's/^[0-9]*[[:space:]]*//' | fzf --height 40% --reverse)
+    if [[ -n "$dir" ]]; then
+      builtin cd "$dir" && ls
+    fi
+  else
+    builtin cd "$@" && ls
+  fi
 }
 
 function u() {
