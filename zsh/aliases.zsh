@@ -22,9 +22,7 @@ alias history='history -i -t "%F %T"'
 
 # git
 alias g='git'
-alias gitSHA="sh ~/dotfiles/git/utils/getSHA.sh $@"
-alias gitArchiveDiffHead="sh ~/dotfiles/git/utils/gitArchiveDiffHead.sh $@"
-alias gitArchiveDiffBetween="sh ~/dotfiles/git/utils/gitArchiveDiffBetween.sh $@"
+alias gitArchiveDiff="sh ~/dotfiles/git/utils/gitArchiveDiff.sh $@"
 
 function cd() {
   if [[ $# -eq 0 ]]; then
