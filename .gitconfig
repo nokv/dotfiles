@@ -76,5 +76,8 @@
   s = switch
   dev = switch develop
   pdev = pull origin develop:develop
+	cp-now = "!f() { git cherry-pick \"$1\" --no-commit && git commit --reset-author -C \"$1\"; }; f"
 [include]
   path = ~/.gitconfig.local
+[credential "https://dev.azure.com"]
+	useHttpPath = true
