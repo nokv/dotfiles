@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo $PWD
+DOTFILES_DIR=$(cd "$(dirname "$0")/.." && pwd)
+echo $DOTFILES_DIR
 
 sudo -v
 cd ~
@@ -17,13 +18,13 @@ fi
 brew update
 brew upgrade
 
-brew bundle --file ./Brewfile
+brew bundle --file "$DOTFILES_DIR/Brewfile"
 
 # create directories
 mkdir ~/Desktop/screenshot
 mkdir ~/Desktop/develop
 
-sh $PWD/macos/set-defaults.sh
-sh $PWD/macos/setup-gpg.sh
+sh "$DOTFILES_DIR/macos/set-defaults.sh"
+sh "$DOTFILES_DIR/macos/setup-gpg.sh"
 
 echo Done!
