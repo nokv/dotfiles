@@ -26,7 +26,9 @@ alias gitArchiveDiff="sh ~/dotfiles/git/utils/gitArchiveDiff.sh $@"
 
 function cd() {
   if [[ $# -eq 0 ]]; then
-    local dir=$(cdr -l | sed 's/^[0-9]*[[:space:]]*//' | fzf --height 40% --reverse)
+    local -a reply
+    cdr -r
+    local dir=$(print -l $reply | fzf --height 40% --reverse)
     if [[ -n "$dir" ]]; then
       builtin cd "$dir" && ls
     fi
