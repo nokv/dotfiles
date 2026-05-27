@@ -1,0 +1,62 @@
+# =========================================================
+# sesh — smart session manager for tmux
+# =========================================================
+#
+# sesh は「tmux セッションへの入口」を統一するツール。
+# `sesh connect <name>` でセッションを作成 or 既存に attach する。
+#
+# このファイルは ~/.config/sesh/sesh.toml にシンボリックリンクされる。
+# 起動: tmux 内で <prefix> f を押すと fzf ピッカーが立ち上がる
+#
+# 構成要素:
+#   1. session  : 手動定義のプロジェクト (この toml に書く)
+#   2. zoxide   : よく cd したディレクトリ (自動で候補化される)
+#   3. tmux     : 既存のセッション (自動)
+# =========================================================
+
+
+# ---------- グローバル設定 ----------
+
+# セッション名に親ディレクトリも含める (デフォルト 1 = basename のみ)。
+# 同名の子ディレクトリ (api/, web/ など) を別プロジェクトで持つと衝突するのを回避
+dir_length = 2
+
+
+# ---------- デフォルト挙動 ----------
+[default_session]
+# セッション作成直後に実行するコマンド (空なら shell のまま)
+# 例: "claude" を入れると毎回 Claude Code が立ち上がる
+startup_command = ""
+# ピッカーで候補にフォーカスした時に右側プレビューに出すコマンド ({} = そのセッションの path)。
+# eza でディレクトリ構造を 2 階層まで表示
+preview_command = "eza --tree --level=1 --git --icons --color=always {}"
+
+
+# ---------- 手動定義セッション ----------
+# よく使うルートディレクトリを名前付きで登録しておく。
+# `sesh connect dotfiles` のように、ディレクトリ名ではなくエイリアスで開ける
+
+[[session]]
+name = "dotfiles"
+path = "~/dotfiles"
+
+
+# ---------- ワイルドカード ----------
+# ~/Desktop/develop/<project> を sesh connect した時に共通設定を当てる。
+# 個別に [[session]] を書かなくても、glob にマッチするパスへ自動で適用される。
+# startup_command を有効化すると、新規セッション作成時に Claude Code が立ち上がる
+# (今は空。必要になったらコメント解除する)
+
+[[wildcard]]
+pattern = "~/Desktop/develop/*"
+# startup_command = "claude"
+preview_command = "eza --tree --level=2 --git --icons --color=always {}"
+
+
+# ---------- ヒント ----------
+# 起動コマンド付きセッションを追加したい場合の例 (コメントアウト):
+#
+# [[session]]
+# name = "claude-playground"
+# path = "~/Desktop/develop/playground"
+# startup_command = "claude"

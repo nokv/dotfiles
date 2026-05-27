@@ -7,7 +7,7 @@ DOTFILES=$(
 )
 
 # SymLink
-files=(.vimrc .zprofile .zshrc .gitconfig .gitignore_global .gitmessage .npmrc)
+files=(.vimrc .zprofile .zshrc .gitconfig .gitignore_global .gitmessage .npmrc .tmux.conf)
 for file in "${files[@]}"; do
   # create backup file
   if [ -e $HOME/$file ]; then
@@ -23,3 +23,11 @@ fi
 # Sheldon
 mkdir -p "$HOME/.config/sheldon"
 ln -svf "$DOTFILES/sheldon/plugins.toml" "$HOME/.config/sheldon/plugins.toml"
+
+# sesh
+mkdir -p "$HOME/.config/sesh"
+ln -svf "$DOTFILES/sesh/sesh.toml" "$HOME/.config/sesh/sesh.toml"
+
+# lazygit
+mkdir -p "$HOME/.config/lazygit"
+ln -svf "$DOTFILES/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"

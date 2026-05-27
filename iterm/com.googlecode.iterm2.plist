@@ -23,11 +23,13 @@
 	<key>AiMaxTokens</key>
 	<integer>400000</integer>
 	<key>AiModel</key>
-	<string>gpt-5.1</string>
+	<string>gpt-5.2</string>
 	<key>AiResponseMaxTokens</key>
 	<integer>128000</integer>
 	<key>AitermURL</key>
 	<string>https://api.openai.com/v1/responses</string>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>Command</key>
@@ -448,8 +450,12 @@
 			<string>~/Desktop/develop/</string>
 			<key>AWDS Window Option</key>
 			<string>Yes</string>
+			<key>Allow Alternate Mouse Scroll</key>
+			<true/>
+			<key>Allow Change Cursor Blink</key>
+			<true/>
 			<key>Allow Title Reporting</key>
-			<false/>
+			<true/>
 			<key>Allow Title Setting</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
@@ -662,6 +668,8 @@
 				<key>Red Component</key>
 				<real>0.68855589628219604</real>
 			</dict>
+			<key>Automatically Enable Alternate Mouse Scroll</key>
+			<true/>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
@@ -1113,6 +1121,8 @@
 			<integer>3</integer>
 			<key>Title Components</key>
 			<integer>512</integer>
+			<key>Tmux Newline</key>
+			<false/>
 			<key>Transparency</key>
 			<real>0.18076175039151091</real>
 			<key>Unicode Normalization</key>
@@ -1190,10 +1200,14 @@
 	<false/>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>SeparateStatusBarsPerPane</key>
+	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
+	<key>ShowPaneTitles</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -1207,6 +1221,12 @@
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabsHaveCloseButton</key>
+	<false/>
+	<key>TmuxPauseModeAgeLimit</key>
+	<integer>120</integer>
+	<key>TmuxSyncClipboard</key>
+	<false/>
+	<key>TmuxUsesDedicatedProfile</key>
 	<true/>
 	<key>ToolbeltTools</key>
 	<array>

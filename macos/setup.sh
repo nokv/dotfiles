@@ -24,6 +24,13 @@ brew bundle --file "$DOTFILES_DIR/Brewfile"
 mkdir ~/Desktop/screenshot
 mkdir ~/Desktop/develop
 
+# TPM (tmux plugin manager)
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+  echo "Installing TPM..."
+  git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+fi
+
 sh "$DOTFILES_DIR/macos/set-defaults.sh"
 sh "$DOTFILES_DIR/macos/setup-gpg.sh"
 
