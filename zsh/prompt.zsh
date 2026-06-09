@@ -1,9 +1,4 @@
-# Starship
-if command -v starship 1>/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-  export STARSHIP_CONFIG=$DOTFILES/starship/starship.toml
-fi
-# fzf
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function set_win_title() {
