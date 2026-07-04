@@ -24,6 +24,9 @@ fi
 mkdir -p "$HOME/.config/sheldon"
 ln -svf "$DOTFILES/sheldon/plugins.toml" "$HOME/.config/sheldon/plugins.toml"
 
+# Powerlevel10k (Lean style, p10k configure 由来のコードを取り込み保守)
+ln -svf "$DOTFILES/p10k/p10k.zsh" "$HOME/.p10k.zsh"
+
 # sesh
 mkdir -p "$HOME/.config/sesh"
 ln -svf "$DOTFILES/sesh/sesh.toml" "$HOME/.config/sesh/sesh.toml"
