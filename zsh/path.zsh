@@ -1,3 +1,5 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 # GCP
 export CLOUDSDK_PYTHON=python3
 # The next line updates PATH for the Google Cloud SDK.
