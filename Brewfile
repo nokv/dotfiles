@@ -12,6 +12,8 @@ brew "bat"
 brew "coreutils"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
@@ -40,6 +42,8 @@ brew "imagemagick-full", link: true
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
+# Lazier way to manage everything docker
+brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
 # YAML Parser
@@ -94,8 +98,6 @@ cask "antigravity"
 cask "appcleaner"
 # Anthropic's official Claude AI desktop app
 cask "claude"
-# Terminal-based AI coding assistant
-cask "claude-code"
 # Screen capturing tool
 cask "cleanshot"
 # Free app that makes your Internet safer
