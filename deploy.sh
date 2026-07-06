@@ -34,3 +34,7 @@ ln -svf "$DOTFILES/sesh/sesh.toml" "$HOME/.config/sesh/sesh.toml"
 # lazygit
 mkdir -p "$HOME/.config/lazygit"
 ln -svf "$DOTFILES/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
+
+# herdr
+mkdir -p "$HOME/.config/herdr"
+ln -svf "$DOTFILES/herdr/config.toml" "$HOME/.config/herdr/config.toml"
