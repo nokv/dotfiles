@@ -7,4 +7,8 @@ cwd=$(herdr pane get "$HERDR_ACTIVE_PANE_ID" 2>/dev/null | sed -En 's/.*"foregro
 cd "${cwd:-${HERDR_ACTIVE_PANE_CWD:-.}}" || exit 1
 b=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null)
 b=${b#origin/}
-exec hunk diff "${b:-develop}"
+b=${b:-develop}
+# ローカルブランチの位置ずれで上流のコミットが差分に混ざらないよう、
+# ブランチ先端ではなく origin との分岐点 (merge-base) を比較対象にする
+base=$(git merge-base "origin/$b" HEAD 2>/dev/null) || base=$b
+exec hunk diff "$base"
