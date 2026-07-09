@@ -21,6 +21,14 @@ type = "pane"
 command = "lazygit"
 description = "run lazygit"
 
+# デフォルトブランチとの差分を hunk でレビュー
+# (呼び出し元ペインの foreground_cwd を起点にするため cd はスクリプト側で行う)
+[[keys.command]]
+key = "prefix+d"
+type = "pane"
+command = "sh ~/.config/herdr/hunk-diff.sh"
+description = "hunk diff vs default branch"
+
 [ui.toast]
 # エージェント状態変化を iTerm2 経由でデスクトップ通知 (デフォルト: off)
 delivery = "terminal"
@@ -28,6 +36,6 @@ delivery = "terminal"
 [ui]
 show_agent_labels_on_pane_borders = true
 
-agent_panel_sort = "spaces"
+agent_panel_sort = "priority"
 [experimental]
 pane_history = true
