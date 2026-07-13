@@ -43,10 +43,6 @@ link config/lazygit/config.yml     "$HOME/.config/lazygit/config.yml"
 link config/herdr/config.toml      "$HOME/.config/herdr/config.toml"
 link config/herdr/hunk-diff.sh     "$HOME/.config/herdr/hunk-diff.sh"
 
-# --- 自作スクリプト ---
-# ~/.local/bin は path.zsh で PATH に追加済み。alias ではなくコマンドとして呼べるようにする
-link bin/gitArchiveDiff.sh         "$HOME/.local/bin/gitArchiveDiff"
-
 # .gitconfig.local は端末固有の設定 (メールアドレス等) なので symlink せず初回のみコピー
 if [[ ! -f "$HOME/.gitconfig.local" ]]; then
   cp "$DOTFILES/config/git/.gitconfig.local.sample" "$HOME/.gitconfig.local"

@@ -16,7 +16,6 @@ dotfiles/
 │   ├── lazygit/     #   → ~/.config/lazygit
 │   ├── herdr/       #   → ~/.config/herdr
 │   └── iterm/       #   symlink 対象外（iTerm2 から手動インポート）
-├── bin/             # 自作スクリプト（→ ~/.local/bin）
 ├── scripts/
 │   ├── deploy.sh    # symlink の作成（設定の反映）
 │   ├── setup.sh     # bootstrap（Homebrew / Brewfile / TPM / macOS defaults）
