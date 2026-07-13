@@ -34,8 +34,12 @@ brew "git"
 brew "git-delta"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Review-first terminal diff viewer for agent-authored changesets
+brew "hunk"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick-full", link: true
 # Lightweight and flexible command-line JSON processor
