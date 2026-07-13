@@ -3,6 +3,6 @@
 ## Install
 
 ```bash
-$ chmod +x deploy.sh
-$ ./deploy.sh
+./scripts/setup.sh
+./scripts/deploy.sh
 ```

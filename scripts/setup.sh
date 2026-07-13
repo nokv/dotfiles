@@ -31,7 +31,7 @@ if [ ! -d "$TPM_DIR" ]; then
   git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
 fi
 
-sh "$DOTFILES_DIR/macos/set-defaults.sh"
-sh "$DOTFILES_DIR/macos/setup-gpg.sh"
+sh "$DOTFILES_DIR/scripts/set-defaults.sh"
+sh "$DOTFILES_DIR/scripts/setup-gpg.sh"
 
 echo Done!
