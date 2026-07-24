@@ -1,19 +1,15 @@
 # herdr — terminal workspace manager
-# 反映: herdr server reload-config / デフォルト全量: herdr --default-config
+# Docs: https://herdr.dev/ja/docs/configuration/
 
-# 初回起動のオンボーディング表示を抑止
 onboarding = false
 
 [theme]
-# 外側端末 (iTerm2) の配色を継承 (デフォルト: catppuccin)
 name = "terminal"
 
 [keys]
-# デフォルトの ctrl+b から tmux と同じ ctrl+a に変更 (筋肉記憶の維持)
 prefix = "ctrl+a"
 workspace_picker = "prefix+s"
 settings = "prefix+shift+s"
-agent_picker = "prefix+a"
 
 [[keys.command]]
 key = "prefix+l"
@@ -30,13 +26,12 @@ command = "sh ~/.config/herdr/hunk-diff.sh"
 description = "hunk diff vs default branch"
 
 [ui.toast]
-# エージェント状態変化を iTerm2 経由でデスクトップ通知 (デフォルト: off)
 delivery = "terminal"
 
 [ui]
 show_agent_labels_on_pane_borders = true
-
 agent_panel_sort = "priority"
+
 [experimental]
 pane_history = true
 switch_ascii_input_source_in_prefix = true
