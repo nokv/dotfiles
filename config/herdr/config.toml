@@ -17,8 +17,6 @@ type = "pane"
 command = "lazygit"
 description = "run lazygit"
 
-# デフォルトブランチとの差分を hunk でレビュー (右隣に split して表示)
-# type="pane" は全画面の一時ペインになるため、shell + pane split で自前配置する
 [[keys.command]]
 key = "prefix+d"
 type = "shell"

@@ -3,7 +3,7 @@
 #   引数なし: アクティブペインの右隣に split して表示 (type="shell" から呼ぶ)
 #   full:     全画面の一時ペインで表示 (type="pane" から呼ぶ)
 # split はシェル経由でしか起動できないため、HERDR_PANE_EXEC を .zshenv で exec させて
-# zsh 初期化 (~1s) をスキップする
+# zsh 初期化をスキップする
 # worktree に cd 中でも追従するよう、シェル cwd 固定の HERDR_ACTIVE_PANE_CWD ではなく
 # foreground_cwd を使う
 cwd=$(herdr pane get "$HERDR_ACTIVE_PANE_ID" 2>/dev/null | sed -En 's/.*"foreground_cwd":"([^"]+)".*/\1/p')
