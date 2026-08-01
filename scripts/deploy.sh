@@ -23,6 +23,7 @@ link() {
 }
 
 # --- $HOME 直下 ---
+link config/zsh/.zshenv           "$HOME/.zshenv"
 link config/zsh/.zshrc            "$HOME/.zshrc"
 link config/zsh/.zprofile         "$HOME/.zprofile"
 link config/git/.gitconfig        "$HOME/.gitconfig"

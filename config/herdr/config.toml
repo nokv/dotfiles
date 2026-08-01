@@ -17,13 +17,21 @@ type = "pane"
 command = "lazygit"
 description = "run lazygit"
 
-# デフォルトブランチとの差分を hunk でレビュー
-# (呼び出し元ペインの foreground_cwd を起点にするため cd はスクリプト側で行う)
+# デフォルトブランチとの差分を hunk でレビュー (右隣に split して表示)
+# type="pane" は全画面の一時ペインになるため、shell + pane split で自前配置する
 [[keys.command]]
 key = "prefix+d"
-type = "pane"
+type = "shell"
 command = "sh ~/.config/herdr/hunk-diff.sh"
-description = "hunk diff vs default branch"
+description = "hunk diff vs default branch (split right)"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "popup"
+width = "80%"
+height = "80%"
+command = "sh ~/.config/herdr/hunk-diff.sh full"
+description = "hunk diff vs default branch (full screen)"
 
 [ui.toast]
 delivery = "terminal"
