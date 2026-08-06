@@ -23,6 +23,8 @@ alias history='history -i -t "%F %T"'
 # git
 alias g='git'
 
+alias cc='claude'
+
 function cd() {
   if [[ $# -eq 0 ]]; then
     local -a reply
