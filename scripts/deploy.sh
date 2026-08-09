@@ -23,6 +23,7 @@ link() {
 }
 
 # --- $HOME 直下 ---
+link config/zsh/.zshenv           "$HOME/.zshenv"
 link config/zsh/.zshrc            "$HOME/.zshrc"
 link config/zsh/.zprofile         "$HOME/.zprofile"
 link config/git/.gitconfig        "$HOME/.gitconfig"
@@ -43,6 +44,7 @@ link config/lazygit/config.yml     "$HOME/.config/lazygit/config.yml"
 link config/herdr/config.toml      "$HOME/.config/herdr/config.toml"
 link config/herdr/hunk-diff.sh     "$HOME/.config/herdr/hunk-diff.sh"
 link config/hunk/config.toml       "$HOME/.config/hunk/config.toml"
+link config/zed/settings.json      "$HOME/.config/zed/settings.json"
 
 # .gitconfig.local は端末固有の設定 (メールアドレス等) なので symlink せず初回のみコピー
 if [[ ! -f "$HOME/.gitconfig.local" ]]; then
