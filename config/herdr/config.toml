@@ -31,6 +31,14 @@ height = "80%"
 command = "sh ~/.config/herdr/hunk-diff.sh full"
 description = "hunk diff vs default branch (full screen)"
 
+[[keys.command]]
+key = "prefix+f"
+type = "popup"
+width = "80%"
+height = "80%"
+command = "sh ~/.config/herdr/yazi-popup.sh"
+description = "browse files with yazi (popup)"
+
 [ui.toast]
 delivery = "terminal"
 
