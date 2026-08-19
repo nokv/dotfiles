@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
   "cli_default_open_behavior": "new_window",
   "buffer_font_family": ".ZedMono",
   "git": {
@@ -192,32 +193,6 @@
         },
       ],
     },
-    "MDX": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
-    "SCSS": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
     "TypeScript": {
       "format_on_save": "on",
       "prettier": {
@@ -241,19 +216,6 @@
       },
       "code_actions_on_format": {
         "source.fixAll.eslint": true,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
-    "Vue.js": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
       },
       "formatter": [
         {
