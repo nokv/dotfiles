@@ -1,7 +1,24 @@
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# fpath への追加は compinit より前に済ませる必要がある
+# HOMEBREW_PREFIX は .zprofile の brew shellenv で設定済み
+if [[ -n "$HOMEBREW_PREFIX" ]]; then
+  FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+  FPATH="$HOMEBREW_PREFIX/share/zsh-completions:${FPATH}"
 fi
+
+# compinit はここで明示的に1回だけ実行する
+autoload -Uz compinit
+if () { setopt local_options extended_glob; [[ -n $HOME/.zcompdump(#qN.mh-24) ]] }; then
+  compinit -C
+else
+  compinit
+fi
+
+# gcloud completion（compdef 定義済みのため inc 内部の compinit はスキップされる）
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+# 1password completion
+cache_eval "op_completion" "op completion zsh"
+compdef _op op
 
 # npm completion
 cache_eval "npm_completion" "npm completion"
