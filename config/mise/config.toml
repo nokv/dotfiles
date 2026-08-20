@@ -4,5 +4,6 @@ idiomatic_version_file_enable_tools = []
 [tools]
 node = "24"
 "npm:@github/copilot" = "latest"
+"npm:agent-browser" = "latest"
 python = "3.12.2"
 rust = "latest"

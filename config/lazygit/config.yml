@@ -1,3 +1,6 @@
+gui:
+  shrinkSidePanelsToContent: true
+
 git:
   diffRenderers:
     - colorArg: always
