@@ -22,6 +22,7 @@ compdef _op op
 
 # npm completion
 cache_eval "npm_completion" "npm completion"
+cache_eval "pnpm_completion" "pnpm completion zsh"
 
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
