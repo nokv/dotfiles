@@ -7,79 +7,76 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "$schema": "zed://schemas/settings",
   "proxy": "",
   "cli_default_open_behavior": "new_window",
   "buffer_font_family": ".ZedMono",
   "git": {
     "blame": {
-      "show_avatar": true,
+      "show_avatar": true
     },
     "inline_blame": {
-      "show_commit_summary": true,
-    },
+      "show_commit_summary": true
+    }
   },
+  "profiles": {},
   "calls": {
-    "mute_on_join": true,
+    "mute_on_join": true
   },
   "zoomed_padding": true,
   "active_pane_modifiers": {
-    "inactive_opacity": 1.0,
+    "inactive_opacity": 1.0
   },
   "edit_predictions": {
-    "provider": "copilot",
+    "provider": "copilot"
   },
   "git_panel": {
     "tree_view": true,
-    "dock": "left",
+    "dock": "left"
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false,
+    "metrics": false
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "terminal": {
     "env": {
-      "FIG_NEW_SESSION": "\"1\"",
+      "FIG_NEW_SESSION": "1"
     },
     "font_family": "HackGen Console NF",
     "max_scroll_history_lines": 20000,
-    "bell": "system",
+    "bell": "system"
   },
   "project_panel": {
     "indent_size": 15.0,
     "default_width": 240.0,
     "dock": "left",
-    "auto_fold_dirs": false,
+    "auto_fold_dirs": false
   },
   "agent": {
     "enabled": false,
     "button": false,
     "favorite_models": [],
-    "model_parameters": [],
+    "model_parameters": []
   },
   "multi_cursor_modifier": "alt",
   "sticky_scroll": {
-    "enabled": false,
+    "enabled": false
   },
   "minimap": {
-    "show": "never",
+    "show": "never"
   },
   "selection_highlight": true,
   "max_tabs": 6,
+  // キーは言語名の完全一致（大文字小文字区別あり）。対応拡張が未インストールの言語
+  // （dotenv / liquid / vue / perl / php）とデフォルトで対応済みの拡張子（*.js / *.css）は削除済み
   "file_types": {
-    "json": [".prettierrc"],
-    "dotenv": [".env"],
-    "javascript": ["*.js"],
-    "shellscript": [".gitconfig"],
-    "liquid": ["*.liquid"],
-    "vue": ["*.vue"],
-    "perl": ["*.cgi"],
-    "php": ["*.php"],
-    "css": ["*.css"],
+    "JSON": [".prettierrc"],
+    "Shell Script": [".gitconfig"]
   },
   "colorize_brackets": true,
   "linked_edits": true,
@@ -96,147 +93,93 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Frappé",
+    "dark": "Catppuccin Frappé"
   },
   "format_on_save": "on",
   "lsp": {
     "oxfmt": {
       "initialization_options": {
         "settings": {
-          "fmt.configPath": null,
-        },
-      },
-    },
+          "fmt.configPath": null
+        }
+      }
+    }
   },
+  // 方針:
+  // - フォーマッタは oxfmt に統一。対象言語は oxc 拡張 (extension.toml) が oxfmt 対応として
+  //   登録している言語リストの転記（TOML のみ Taplo を優先して除外）。ルート指定にしないのは、
+  //   ルートの言語設定は全言語に適用され、oxfmt 非対応言語 (Ruby / Rust 等) の整形が壊れるため
+  // - format_on_save はルートの "on" が全言語に効くため言語別指定は不要。
+  //   明示 formatter は prettier を経由しないため prettier.allowed の指定も不要
+  // - language_servers はデフォルト配列とマージされず丸ごと上書きされるため、
+  //   デフォルトで無効化されている typescript-language-server も再指定が必要
+  // - TS 系は tsgo 拡張 (typescript-ls) に統一し vtsls を無効化。oxlint は ESLint 中心の
+  //   リポジトリが大半のため無効化（必要なプロジェクトの .zed/settings.json で再有効化する）
   "languages": {
     "Ruby": {
-      "language_servers": ["ruby-lsp"],
-    },
-    "CSS": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
-    "GraphQL": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
-    "HTML": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
+      "language_servers": ["ruby-lsp", "!solargraph", "!rubocop"]
     },
     "JavaScript": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
+      "language_servers": ["!vtsls", "!typescript-language-server", "!oxlint", "..."],
+      "code_actions_on_format": { "source.fixAll.eslint": true },
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
     },
-    "JSON": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
-    "Markdown": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
+    "JSX": {
+      "language_servers": ["!vtsls", "!typescript-language-server", "!oxlint", "..."],
+      "code_actions_on_format": { "source.fixAll.eslint": true },
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
     },
     "TypeScript": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
+      "language_servers": ["!vtsls", "!typescript-language-server", "!oxlint", "..."],
+      "code_actions_on_format": { "source.fixAll.eslint": true },
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
     },
     "TSX": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
+      "language_servers": ["!vtsls", "!typescript-language-server", "!oxlint", "..."],
+      "code_actions_on_format": { "source.fixAll.eslint": true },
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "CSS": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "SCSS": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "LESS": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "GraphQL": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "HTML": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "Handlebars": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "JSON": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "JSONC": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "JSON5": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "Markdown": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "MDX": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "Svelte": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    },
+    "Vue.js": {
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
     },
     "YAML": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false,
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt",
-          },
-        },
-      ],
-    },
-  },
+      "formatter": [{ "language_server": { "name": "oxfmt" } }]
+    }
+  }
 }
