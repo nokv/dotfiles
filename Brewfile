@@ -1,4 +1,5 @@
 tap "1password/tap", trusted: true
+tap "abue-ammar/tinycast", trusted: true
 tap "microsoft/git", trusted: true
 # Library for manipulating PNG images
 brew "libpng"
@@ -100,6 +101,8 @@ cask "1password-cli"
 cask "antigravity"
 # Application uninstaller
 cask "appcleaner"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Screen capturing tool
@@ -144,20 +147,20 @@ cask "notion"
 cask "obsidian"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
-# HTTP debugging proxy
-cask "proxyman"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
-# Control your tools with a few keystrokes
-cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Local-first screen recording and search application
+cask "retrace"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
 # Music streaming service
 cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
+# Tiny, fully native launcher, hotkeys, and clipboard history
+cask "abue-ammar/tinycast/tinycast", trusted: true
 # Open-source code editor
 cask "visual-studio-code"
 # Multiplayer code editor
