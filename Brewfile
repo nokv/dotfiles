@@ -165,4 +165,3 @@ cask "abue-ammar/tinycast/tinycast", trusted: true
 cask "visual-studio-code"
 # Multiplayer code editor
 cask "zed"
-npm "corepack"
