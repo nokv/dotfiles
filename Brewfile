@@ -147,6 +147,8 @@ cask "notion"
 cask "obsidian"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
+# HTTP debugging proxy
+cask "proxyman"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
 # Move and resize windows using keyboard shortcuts or snap areas
