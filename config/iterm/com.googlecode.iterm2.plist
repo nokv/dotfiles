@@ -32,6 +32,8 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>ClaudeCodeWorkgroupUpsellSuppressed</key>
+	<true/>
 	<key>Command</key>
 	<string></string>
 	<key>Custom Color Presets</key>
@@ -411,6 +413,8 @@
 	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
+	<key>FocusReportingEnabled</key>
+	<true/>
 	<key>HTMLTabTitles</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
