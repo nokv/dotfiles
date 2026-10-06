@@ -13,8 +13,9 @@ cache_eval() {
   local cmd_name=${cmd%% *}  # コマンド名を取得（最初の単語）
   local cmd_path=$(whence -p "$cmd_name" 2>/dev/null)
 
-  # キャッシュが存在しない、またはコマンドが更新された場合に再生成
-  if [[ ! -f "$cache_file" ]] || [[ -n "$cmd_path" && "$cmd_path" -nt "$cache_file" ]]; then
+  local -a expired=( $cache_file(N.md+7) )
+
+  if [[ ! -s "$cache_file" ]] || (( $#expired )) || [[ -n "$cmd_path" && "$cmd_path" -nt "$cache_file" ]]; then
     mkdir -p "$cache_dir"
     eval "$cmd" > "$cache_file" 2>/dev/null
   fi
