@@ -47,8 +47,14 @@ link config/herdr/yazi-popup.sh    "$HOME/.config/herdr/yazi-popup.sh"
 link config/hunk/config.toml       "$HOME/.config/hunk/config.toml"
 link config/mise/config.toml       "$HOME/.config/mise/config.toml"
 link config/zed/settings.json      "$HOME/.config/zed/settings.json"
+link config/zsh-history-sync/sync.sh "$HOME/.config/zsh-history-sync/sync.sh"
 
 # .gitconfig.local は端末固有の設定 (メールアドレス等) なので symlink せず初回のみコピー
 if [[ ! -f "$HOME/.gitconfig.local" ]]; then
   cp "$DOTFILES/config/git/.gitconfig.local.sample" "$HOME/.gitconfig.local"
+fi
+
+# 履歴の退避先 (クラウド同期フォルダのパス) も端末固有なので sample から初回のみコピー
+if [[ ! -f "$HOME/.config/zsh-history-sync/env" ]]; then
+  cp "$DOTFILES/config/zsh-history-sync/env.sample" "$HOME/.config/zsh-history-sync/env"
 fi

@@ -22,3 +22,14 @@ setopt HIST_EXPAND
 setopt EXTENDED_HISTORY
 # 余分な空白を削除して履歴に保存
 setopt HIST_REDUCE_BLANKS
+
+# 履歴ファイルをクラウド同期フォルダへ退避する (config/zsh-history-sync/sync.sh)。
+# launchd から起動すると ~/Library/CloudStorage への書き込みが TCC で拒否されるため、
+# ターミナルの権限を引き継ぐ対話シェルから PERIOD 秒おきにバックグラウンドで起動する
+PERIOD=600
+_zsh_history_sync() {
+  local sync="${XDG_CONFIG_HOME:-$HOME/.config}/zsh-history-sync/sync.sh"
+  [[ -x $sync ]] && "$sync" &>/dev/null &!
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook periodic _zsh_history_sync
