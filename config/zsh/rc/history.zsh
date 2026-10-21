@@ -4,9 +4,7 @@ SAVEHIST=1000000
 
 # 履歴ファイルに追記する（上書きしない）
 setopt APPEND_HISTORY
-# コマンド実行時に即座に履歴に追加
-setopt INC_APPEND_HISTORY
-# 複数のzshセッション間で履歴を共有
+# 複数のzshセッション間で履歴を共有（コマンド実行時の即時追記も含む）
 setopt SHARE_HISTORY
 # 直前と同じコマンドは履歴に追加しない
 setopt HIST_IGNORE_DUPS
