@@ -37,12 +37,28 @@ cache_clear() {
 }
 
 # 自分が作成した PR を org 配下の全リポジトリ横断で一覧する
-# Usage: prs [YYYY-MM-DD] [org]   # 日付省略時は今日（JST）以降、org 省略時は GH_PR_OWNER
+# Usage: prs [-o org] [YYYY-MM-DD]   # 日付省略時は今日（JST）以降、org 省略時は GH_PR_OWNER
 prs() {
-  local since=${1:-$(TZ=Asia/Tokyo date +%Y-%m-%d)}
-  local owner=${2:-$GH_PR_OWNER}
+  local opt_owner= args=()
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -o|--owner)
+        [[ $# -ge 2 ]] || { echo "prs: $1 requires an argument" >&2; return 1; }
+        opt_owner=$2; shift 2 ;;
+      -o=*|--owner=*) opt_owner=${1#*=}; shift ;;
+      --) shift; args+=("$@"); break ;;
+      -*) echo "prs: unknown option: $1" >&2; return 1 ;;
+      *) args+=("$1"); shift ;;
+    esac
+  done
+  if (( ${#args} > 1 )); then
+    echo "prs: too many arguments (usage: prs [-o org] [YYYY-MM-DD])" >&2
+    return 1
+  fi
+  local since=${args[1]:-$(TZ=Asia/Tokyo date +%Y-%m-%d)}
+  local owner=${opt_owner:-$GH_PR_OWNER}
   if [[ -z "$owner" ]]; then
-    echo "prs: org is not given (pass as 2nd arg or export GH_PR_OWNER=<org>)" >&2
+    echo "prs: org is not given (pass -o <org> or export GH_PR_OWNER=<org>)" >&2
     return 1
   fi
   # gh search prs は --template で JST 変換ができず、--json に総件数も含まれないため、
