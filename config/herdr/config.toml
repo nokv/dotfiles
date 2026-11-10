@@ -6,6 +6,7 @@ onboarding = false
 [theme]
 name = "terminal"
 
+auto_switch = false
 [keys]
 prefix = "ctrl+a"
 workspace_picker = "prefix+s"
