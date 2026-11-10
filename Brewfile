@@ -1,6 +1,8 @@
 tap "1password/tap", trusted: true
 tap "abue-ammar/tinycast", trusted: true
 tap "microsoft/git", trusted: true
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
 # Library for manipulating PNG images
 brew "libpng"
 # Automatic configure script builder
@@ -29,10 +31,14 @@ brew "ffmpeg-full"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# GitHub Actions linter
+brew "ghalint"
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Audit git repos for secrets
+brew "gitleaks"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Agent multiplexer that lives in your terminal
@@ -91,14 +97,14 @@ brew "tmux"
 brew "uv"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Agent orchestration platform
-cask "antigravity"
 # Application uninstaller
 cask "appcleaner"
 # OpenAI's official ChatGPT desktop app
@@ -109,12 +115,8 @@ cask "claude"
 cask "cleanshot"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # AI-powered translator
 cask "deepl"
-# Voice and text chat software
-cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 cask "font-hack-nerd-font"
@@ -137,7 +139,7 @@ cask "google-drive"
 cask "iterm2"
 # Keyboard customiser
 cask "karabiner-elements"
-# Shows the next meeting in the menu bar
+# Meetings in your menu bar
 cask "meetingbar"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
@@ -159,10 +161,12 @@ cask "retrace"
 cask "session-manager-plugin"
 # Music streaming service
 cask "spotify"
+# Menu bar customization tool
+cask "swiftbar"
 # Native GUI tool for relational databases
 cask "tableplus"
-# Tiny, fully native launcher, hotkeys, and clipboard history
-cask "abue-ammar/tinycast/tinycast", trusted: true
+# Application launcher and productivity tool
+cask "tinycast"
 # Open-source code editor
 cask "visual-studio-code"
 # Multiplayer code editor
