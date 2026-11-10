@@ -50,7 +50,7 @@ expires_at() {
     30m) date -u -v+30M +%Y-%m-%dT%H:%M:%SZ ;;
     1h) date -u -v+1H +%Y-%m-%dT%H:%M:%SZ ;;
     4h) date -u -v+4H +%Y-%m-%dT%H:%M:%SZ ;;
-    1w) date -u -v+7d +%Y-%m-%dT%H:%M:%SZ ;;
+    week) date -u -r "$(date -v+sun -v23H -v59M -v59S +%s)" +%Y-%m-%dT%H:%M:%SZ ;;
     today)date -u -r "$(date -v23H -v59M -v59S +%s)" +%Y-%m-%dT%H:%M:%SZ ;;
     *) echo "" ;;
   esac
@@ -113,7 +113,7 @@ else
   echo "Set busy for 1 hour | bash=\"$0\" param1=on param2=1h terminal=false refresh=true"
   echo "Set busy for 4 hours | bash=\"$0\" param1=on param2=4h terminal=false refresh=true"
   echo "Set busy until end of day | bash=\"$0\" param1=on param2=today terminal=false refresh=true"
-  echo "Set busy for 1 week | bash=\"$0\" param1=on param2=1w terminal=false refresh=true"
+  echo "Set busy until end of week | bash=\"$0\" param1=on param2=week terminal=false refresh=true"
 fi
 echo "---"
 echo "Refresh | refresh=true"
