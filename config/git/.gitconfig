@@ -81,11 +81,11 @@
 	cp-now = "!f() { git cherry-pick \"$1\" --no-commit && git commit --reset-author -C \"$1\"; }; f"
 [include]
   path = ~/.gitconfig.local
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://dev.azure.com"]
+	useHttpPath = true
