@@ -34,6 +34,7 @@ link config/tmux/.tmux.conf       "$HOME/.tmux.conf"
 link config/vim/.vimrc            "$HOME/.vimrc"
 # p10k configure 由来のコードを取り込み保守しているため ~/.p10k.zsh に配置
 link config/p10k/p10k.zsh         "$HOME/.p10k.zsh"
+link config/swiftbar/github-busy.1m.sh "$HOME/.swiftbar/github-busy.1m.sh"
 
 # --- XDG (~/.config) 配下 ---
 # zsh の分割ファイル (aliases.zsh 等) はディレクトリごと symlink し、.zshrc から source する
