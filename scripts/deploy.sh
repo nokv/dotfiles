@@ -25,11 +25,9 @@ link() {
 # --- $HOME 直下 ---
 link config/zsh/.zshenv           "$HOME/.zshenv"
 link config/zsh/.zshrc            "$HOME/.zshrc"
-link config/zsh/.zprofile         "$HOME/.zprofile"
 link config/git/.gitconfig        "$HOME/.gitconfig"
 link config/git/.gitignore_global "$HOME/.gitignore_global"
 link config/git/.gitmessage       "$HOME/.gitmessage"
-link config/npm/.npmrc            "$HOME/.npmrc"
 link config/tmux/.tmux.conf       "$HOME/.tmux.conf"
 link config/vim/.vimrc            "$HOME/.vimrc"
 # p10k configure 由来のコードを取り込み保守しているため ~/.p10k.zsh に配置
@@ -47,8 +45,22 @@ link config/herdr/hunk-diff.sh     "$HOME/.config/herdr/hunk-diff.sh"
 link config/herdr/yazi-popup.sh    "$HOME/.config/herdr/yazi-popup.sh"
 link config/hunk/config.toml       "$HOME/.config/hunk/config.toml"
 link config/mise/config.toml       "$HOME/.config/mise/config.toml"
+link config/npm/npmrc              "$HOME/.config/npm/npmrc"
 link config/zed/settings.json      "$HOME/.config/zed/settings.json"
 link config/zsh-history-sync/sync.sh "$HOME/.config/zsh-history-sync/sync.sh"
+
+# ~/.zprofileと~/.npmrcは外部ツール（Docker Desktop等）が追記するため、symlinkにせず実体ファイルのまま置く。
+# 旧構成のsymlinkが残っていると追記がリポジトリ内に入るので取り除く
+for dest in "$HOME/.zprofile" "$HOME/.npmrc"; do
+  if [ -L "$dest" ]; then
+    rm "$dest"
+  fi
+done
+
+profile_loader="source ~/.config/zsh/profile.zsh"
+if ! grep -qxF "$profile_loader" "$HOME/.zprofile" 2>/dev/null; then
+  echo "$profile_loader" >> "$HOME/.zprofile"
+fi
 
 # .gitconfig.local は端末固有の設定 (メールアドレス等) なので symlink せず初回のみコピー
 if [[ ! -f "$HOME/.gitconfig.local" ]]; then

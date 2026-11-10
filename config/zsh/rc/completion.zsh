@@ -1,5 +1,5 @@
 # fpath への追加は compinit より前に済ませる必要がある
-# HOMEBREW_PREFIX は .zprofile の brew shellenv で設定済み
+# HOMEBREW_PREFIX は profile.zsh の brew shellenv で設定済み
 if [[ -n "$HOMEBREW_PREFIX" ]]; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
   FPATH="$HOMEBREW_PREFIX/share/zsh-completions:${FPATH}"
