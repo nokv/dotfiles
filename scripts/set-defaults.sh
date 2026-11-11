@@ -9,9 +9,6 @@ osascript -e 'tell application "System Preferences" to quit'
 defaults write com.apple.dock autohide -bool "true"
 defaults write com.apple.dock show-recents -bool "false"
 defaults write com.apple.dock tilesize -int "40"
-defaults write com.apple.dock springboard-columns -int 9
-defaults write com.apple.dock springboard-rows -int 6
-defaults write com.apple.dock ResetLaunchPad -bool "true"
 # Restart Dock to apply changes
 killall Dock
 
