@@ -1,28 +1,21 @@
-#!/bin/sh
+#!/bin/bash
+set -eu
 
-DOTFILES_DIR=$(cd "$(dirname "$0")/.." && pwd)
-echo $DOTFILES_DIR
+DOTFILES=$(cd "$(dirname "$0")/.." && pwd)
 
 sudo -v
-cd ~
 
-if test ! $(which brew); then
-  echo "Installing Homebrew... "
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  echo "Homebrew is already installed"
-  # exit 1
+  # インストール直後は brew が PATH に入っていない (Apple Silicon では /opt/homebrew 配下)
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Update and upgrade
 brew update
-brew upgrade
+brew bundle --file "$DOTFILES/Brewfile"
 
-brew bundle --file "$DOTFILES_DIR/Brewfile"
-
-# create directories
-mkdir ~/Desktop/screenshot
-mkdir ~/Desktop/develop
+mkdir -p ~/Desktop/screenshot ~/Desktop/develop
 
 # TPM (tmux plugin manager)
 TPM_DIR="$HOME/.tmux/plugins/tpm"
@@ -31,7 +24,17 @@ if [ ! -d "$TPM_DIR" ]; then
   git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
 fi
 
-sh "$DOTFILES_DIR/scripts/set-defaults.sh"
-sh "$DOTFILES_DIR/scripts/setup-gpg.sh"
+# GPG の pinentry を pinentry-mac にする
+mkdir -p ~/.gnupg
+chmod 700 ~/.gnupg
+pinentry_line="pinentry-program $(command -v pinentry-mac)"
+if ! grep -qxF "$pinentry_line" ~/.gnupg/gpg-agent.conf 2>/dev/null; then
+  echo "$pinentry_line" >> ~/.gnupg/gpg-agent.conf
+fi
+gpgconf --kill gpg-agent
 
-echo Done!
+sh "$DOTFILES/scripts/set-defaults.sh"
+
+"$DOTFILES/scripts/deploy.sh"
+
+echo "Done!"
